@@ -1,0 +1,22 @@
+.mainHeader{
+    position:absolute;
+    top:100px;
+    left:50px;
+    z-index:9999;
+    font-family: 'Merriweather', serif;
+    font-size:3em;
+
+}
+.mainTxt{
+    font-family: 'PT Sans Caption', sans-serif;
+}
+#menu{
+    z-index:10000;
+}
+#aboutRev{
+    margin-top:30px;
+}
+p {
+    font-family:'PT Sans Caption', sans-serif;
+    font-size:1.2em;
+}
