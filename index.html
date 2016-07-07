@@ -13,6 +13,7 @@
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/personalStyle.css" rel="stylesheet" />
     <link href="css/slabtext.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -24,6 +25,42 @@
     <script src="js/jquery.slabtext.js"></script>
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/script.js"></script>
+
+    <noscript>
+        <style>
+            .ib-main a {
+                cursor: pointer;
+            }
+
+            .ib-main-wrapper {
+                position: absolute;
+                top: 0px;
+                bottom: 24px;
+                overflow: scroll;
+            }
+        </style>
+    </noscript>
+
+   <!-- <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />-->
+    <script id="previewTmpl" type="text/x-jquery-tmpl">
+        <div id="ib-img-preview" class="ib-preview">
+            <img src="${src}" alt="" class="ib-preview-img" />
+            <span class="ib-preview-descr" style="display:none;">${description}</span>
+            <div class="ib-nav" style="display:none;">
+                <span class="ib-nav-prev">Previous</span>
+                <span class="ib-nav-next">Next</span>
+            </div>
+            <span class="ib-close" style="display:none;">Close Preview</span>
+            <div class="ib-loading-large" style="display:none;">Loading...</div>
+        </div>
+    </script>
+    <script id="contentTmpl" type="text/x-jquery-tmpl">
+        <div id="ib-content-preview" class="ib-content-preview">
+            <div class="ib-teaser" style="display:none;">{{html teaser}}</div>
+            <div class="ib-content-full" style="display:none;">{{html content}}</div>
+            <span class="ib-close" style="display:none;">Close Preview</span>
+        </div>
+    </script>	
 </head>
 <body>
     <!--Menu-->
@@ -35,6 +72,7 @@
                 <li class="active"><a href="#aboutRev">Что такое Revell</a></li>
                 <li><a href="#goods">Товары</a></li>
                 <li><a href="#contacts">Контакты</a></li>
+                <li><a href="#other">Галерея</a></li>
                 <li><a href="#other">Прочее</a></li>
             </ul>
         </div>
@@ -54,7 +92,7 @@
                 Revell - это американо-немецкий производитель пластиковых моделей для технического творчества. Во всем мире, и в Украине кстати, как части этого мира тоже, существуют миллионы любителей попилить ножовкой в свободное время или помахать напильником, а иногда и размять плечи с паяльником. В общем, это люди с прямыми руками, которые любят механизмы, войнушки и историю и вот для них-то Revell, собственно, и  работает.
             </p>
             <p>
-                Концепция весьма проста:<br />
+                <b> Концепция весьма проста:</b><br />
                 вам продают пакет с пластиковыми деталями, которые нужно склеить в единое целое. Клеить нужно специальным клеем, "вулканизирующим" края деталей, после (или до, это кто как предпочитает) склеивания наступает этап покраски модели, доработки, и всякого тюнинга. Процесс содержит в себе тысячу и один способ изговнить эталонную модель, нарисованную у Вас в голове. Скучать не придется, но результат того стоит. Из говна и палок на ваших глазах родится гомункулюс, который гордо можно будет засунуть на полку и демонстрировать друзьям.
             </p>
             <p>
@@ -70,33 +108,513 @@
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
     </div>
-        <div class="row someInfo1">
-            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
-            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 svgPutHere">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
+    <div class="row someInfo1">
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
 
-                        <clipPath id="heart-path">
-
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M505.122,245.073c-0.55-15.348-2.304-30.38-5.473-44.904H397.809v-17.961h35.923v-17.961h-71.846v-17.962h53.885v-17.961  h-17.962v-17.961h-35.923V92.399h17.962V74.438h-35.924V56.477h17.962V38.515V27.114C329.189,11.561,292.74,2.592,254.116,2.592  C118.264,2.592,7.87,110.385,3.104,245.073H505.122z M164.309,56.477c39.671,0,71.846,32.175,71.846,71.846  c0,39.683-32.175,71.846-71.846,71.846c-39.689,0-71.847-32.164-71.847-71.846C92.462,88.652,124.62,56.477,164.309,56.477" />
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M308.001,487.554h-17.962v-17.961h53.885v-17.962h17.962v-17.962h53.885v-17.961h17.961v-17.962h-35.923v-17.961h-53.885  v-17.962h35.924v-17.962h71.846V325.9h-35.923v-17.962h83.879c3.169-14.523,4.923-29.55,5.473-44.904H3.104  c4.765,134.7,115.16,242.481,251.012,242.481c18.522,0,36.52-2.14,53.885-5.929V487.554z" />
-
-                        </clipPath>
-                    </defs>
-                </svg>
-                <svg class="heart-icon icon" viewBox="0 0 512 512">
-                    <rect width="512" height="512" />
-                </svg>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 svgPutHere">
+            <a href="#"><img class="svgPics img-responsive" src="pics/1467840132_death_star.svg" /></a>
         </div>
-     </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <a href="#"> <img class="svgPics img-responsive" src="pics/1467894761_beetle.svg" /></a>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <a href="#"><img class="svgPics img-responsive" src="pics/1467839995_aiga_water_transportation_bg.svg" /></a>
 
- 
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <a href="#"> <img class="svgPics-pl img-responsive" src="pics/1467839728_plane.svg" /></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-1 col-sm-1 co1-md-1 col-lg-1"></div>
+        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-10">
+            <div id="ib-main-wrapper">
+                <div class="ib-main" style="padding-left:100px">
+                    <a href="#">
+                        <img src="/revell/star_W/falcon_small.jpg" data-largesrc="/revell/star_W/falcon_big.jpg" alt="" />
+                        <span>Первое фото</span>
+        
+                    </a>
+                    <a href="">
+                        <img src="/revell/star_W/luke_small.jpg" data-largesrc="/revell/star_W/luke_big.jpg" alt="" />
+                        <span></span>
+                    </a>
+                    <a href="">
+                        <img src="/revell/star_W/poesxwing_small.jpg" data-largesrc="/revell/star_W/poesxwing_big.jpg" alt="" />
+                        <span></span>
+                    </a>
+                    <a href="">
+                        <img src="/revell/star_W/x-wing_small.jpg" data-largesrc="/revell/star_W/x-wing_big.jpg" alt="" />
+                        <span></span>
+                    </a>
+                    <a href="">
+                        <img src="/revell/star_W/xwing2_small.jpg" data-largesrc="/revell/star_W/xwing2_big.jpg" alt="" />
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+       </div>
+
+    <p>
+        Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+        Placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante.
+        Fusce non varius purus aenean nec magna felis fusce vestibulum velit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt, turpis dui ornare nisl, sollicitudin interdum turpis nunc eget.
+        Sem nulla eu ultricies orci praesent id augue nec lorem pretium congue sit amet ac nunc fusce iaculis lorem eu diam hendrerit at mattis purus dignissim vivamus mauris tellus, fringilla.
+        Vel dapibus a, blandit quis erat vivamus elementum aliquam luctus etiam fringilla pretium sem vitae sodales mauris id nulla est praesent laoreet, metus vel auctor aliquam, eros purus vulputate leo.
+        Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+        Placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante.
+        Fusce non varius purus aenean nec magna felis fusce vestibulum velit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt, turpis dui ornare nisl, sollicitudin interdum turpis nunc eget.
+        Sem nulla eu ultricies orci praesent id augue nec lorem pretium congue sit amet ac nunc fusce iaculis lorem eu diam hendrerit at mattis purus dignissim vivamus mauris tellus, fringilla.
+        Vel dapibus a, blandit quis erat vivamus elementum aliquam luctus etiam fringilla pretium sem vitae sodales mauris id nulla est praesent laoreet, metus vel auctor aliquam, eros purus vulputate leo.
+        Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+        Placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante.
+        Fusce non varius purus aenean nec magna felis fusce vestibulum velit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt, turpis dui ornare nisl, sollicitudin interdum turpis nunc eget.
+        Sem nulla eu ultricies orci praesent id augue nec lorem pretium congue sit amet ac nunc fusce iaculis lorem eu diam hendrerit at mattis purus dignissim vivamus mauris tellus, fringilla.
+        Vel dapibus a, blandit quis erat vivamus elementum aliquam luctus etiam fringilla pretium sem vitae sodales mauris id nulla est praesent laoreet, metus vel auctor aliquam, eros purus vulputate leo.
+    </p>
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="js/jquery.kinetic.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript">
+            $(function() {
+
+				var $ibWrapper	= $('#ib-main-wrapper'),
+
+					Template	= (function() {
+
+							// true if dragging the container
+						var kinetic_moving				= false,
+							// current index of the opened item
+							current						= -1,
+							// true if the item is being opened / closed
+							isAnimating					= false,
+							// items on the grid
+							$ibItems					= $ibWrapper.find('div.ib-main > a'),
+							// image items on the grid
+							$ibImgItems					= $ibItems.not('.ib-content'),
+							// total image items on the grid
+							imgItemsCount				= $ibImgItems.length,
+							init						= function() {
+
+								// add a class ib-image to the image items
+								$ibImgItems.addClass('ib-image');
+								// apply the kinetic plugin to the wrapper
+								loadKinetic();
+								// load some events
+								initEvents();
+
+							},
+							loadKinetic					= function() {
+
+								setWrapperSize();
+
+								$ibWrapper.kinetic({
+									moved	: function() {
+
+										kinetic_moving = true;
+
+									},
+									stopped	: function() {
+
+										kinetic_moving = false;
+
+									}
+								});
+
+							},
+							setWrapperSize				= function() {
+
+								var containerMargins	= $('#ib-top').outerHeight(true) + $('#header').outerHeight(true) + parseFloat( $ibItems.css('margin-top') );
+								$ibWrapper.css( 'height', $(window).height() - containerMargins )
+
+							},
+							initEvents					= function() {
+
+								// open the item only if not dragging the container
+								$ibItems.bind('click.ibTemplate', function( event ) {
+
+									if( !kinetic_moving )
+										openItem( $(this) );
+
+									return false;
+
+								});
+
+								// on window resize, set the wrapper and preview size accordingly
+								$(window).bind('resize.ibTemplate', function( event ) {
+
+									setWrapperSize();
+
+									$('#ib-img-preview, #ib-content-preview').css({
+										width	: $(window).width(),
+										height	: $(window).height()
+									})
+
+								});
+
+							},
+							openItem					= function( $item ) {
+
+								if( isAnimating ) return false;
+
+								// if content item
+								if( $item.hasClass('ib-content') ) {
+
+									isAnimating	= true;
+									current	= $item.index('.ib-content');
+									loadContentItem( $item, function() { isAnimating = false; } );
+
+								}
+								// if image item
+								else {
+
+									isAnimating	= true;
+									current	= $item.index('.ib-image');
+									loadImgPreview( $item, function() { isAnimating = false; } );
+
+								}
+
+							},
+							// opens one image item (fullscreen)
+							loadImgPreview				= function( $item, callback ) {
+
+								var largeSrc		= $item.children('img').data('largesrc'),
+									description		= $item.children('span').text(),
+									largeImageData	= {
+										src			: largeSrc,
+										description	: description
+									};
+
+								// preload large image
+								$item.addClass('ib-loading');
+
+								preloadImage( largeSrc, function() {
+
+									$item.removeClass('ib-loading');
+
+									var hasImgPreview	= ( $('#ib-img-preview').length > 0 );
+
+									if( !hasImgPreview )
+										$('#previewTmpl').tmpl( largeImageData ).insertAfter( $ibWrapper );
+									else
+										$('#ib-img-preview').children('img.ib-preview-img').attr( 'src', largeSrc );
+
+									//get dimentions for the image, based on the windows size
+									var	dim	= getImageDim( largeSrc );
+
+									$item.removeClass('ib-img-loading');
+
+									//set the returned values and show/animate preview
+									$('#ib-img-preview').css({
+										width	: $item.width(),
+										height	: $item.height(),
+										left	: $item.offset().left,
+										top		: $item.offset().top
+									}).children('img.ib-preview-img').hide().css({
+										width	: dim.width,
+										height	: dim.height,
+										left	: dim.left,
+										top		: dim.top
+									}).fadeIn( 400 ).end().show().animate({
+										width	: $(window).width(),
+										left	: 0
+									}, 500, 'easeOutExpo', function() {
+
+										$(this).animate({
+											height	: $(window).height(),
+											top		: 0
+										}, 400, function() {
+
+											var $this	= $(this);
+											$this.find('span.ib-preview-descr, span.ib-close').show()
+											if( imgItemsCount > 1 )
+												$this.find('div.ib-nav').show();
+
+											if( callback ) callback.call();
+
+										});
+
+									});
+
+									if( !hasImgPreview )
+										initImgPreviewEvents();
+
+								} );
+
+							},
+							// opens one content item (fullscreen)
+							loadContentItem				= function( $item, callback ) {
+
+								var hasContentPreview	= ( $('#ib-content-preview').length > 0 ),
+									teaser				= $item.children('div.ib-teaser').html(),
+									content				= $item.children('div.ib-content-full').html(),
+									contentData			= {
+										teaser		: teaser,
+										content		: content
+									};
+
+								if( !hasContentPreview )
+									$('#contentTmpl').tmpl( contentData ).insertAfter( $ibWrapper );
+
+								//set the returned values and show/animate preview
+								$('#ib-content-preview').css({
+									width	: $item.width(),
+									height	: $item.height(),
+									left	: $item.offset().left,
+									top		: $item.offset().top
+								}).show().animate({
+									width	: $(window).width(),
+									left	: 0
+								}, 500, 'easeOutExpo', function() {
+
+									$(this).animate({
+										height	: $(window).height(),
+										top		: 0
+									}, 400, function() {
+
+										var $this	= $(this),
+											$teaser	= $this.find('div.ib-teaser'),
+											$content= $this.find('div.ib-content-full'),
+											$close	= $this.find('span.ib-close');
+
+										if( hasContentPreview ) {
+											$teaser.html( teaser )
+											$content.html( content )
+										}
+
+										$teaser.show();
+										$content.show();
+										$close.show();
+
+										if( callback ) callback.call();
+
+									});
+
+								});
+
+								if( !hasContentPreview )
+									initContentPreviewEvents();
+
+							},
+							// preloads an image
+							preloadImage				= function( src, callback ) {
+
+								$('<img/>').load(function(){
+
+									if( callback ) callback.call();
+
+								}).attr( 'src', src );
+
+							},
+							// load the events for the image preview : navigation ,close button, and window resize
+							initImgPreviewEvents		= function() {
+
+								var $preview	= $('#ib-img-preview');
+
+								$preview.find('span.ib-nav-prev').bind('click.ibTemplate', function( event ) {
+
+									navigate( 'prev' );
+
+								}).end().find('span.ib-nav-next').bind('click.ibTemplate', function( event ) {
+
+									navigate( 'next' );
+
+								}).end().find('span.ib-close').bind('click.ibTemplate', function( event ) {
+
+									closeImgPreview();
+
+								});
+
+								//resizing the window resizes the preview image
+								$(window).bind('resize.ibTemplate', function( event ) {
+
+									var $largeImg	= $preview.children('img.ib-preview-img'),
+										dim			= getImageDim( $largeImg.attr('src') );
+
+									$largeImg.css({
+										width	: dim.width,
+										height	: dim.height,
+										left	: dim.left,
+										top		: dim.top
+									})
+
+								});
+
+							},
+							// load the events for the content preview : close button
+							initContentPreviewEvents	= function() {
+
+								$('#ib-content-preview').find('span.ib-close').bind('click.ibTemplate', function( event ) {
+
+									closeContentPreview();
+
+								});
+
+							},
+							// navigate the image items in fullscreen mode
+							navigate					= function( dir ) {
+
+								if( isAnimating ) return false;
+
+								isAnimating		= true;
+
+								var $preview	= $('#ib-img-preview'),
+									$loading	= $preview.find('div.ib-loading-large');
+
+								$loading.show();
+
+								if( dir === 'next' ) {
+
+									( current === imgItemsCount - 1 ) ? current	= 0 : ++current;
+
+								}
+								else if( dir === 'prev' ) {
+
+									( current === 0 ) ? current	= imgItemsCount - 1 : --current;
+
+								}
+
+								var $item		= $ibImgItems.eq( current ),
+									largeSrc	= $item.children('img').data('largesrc'),
+									description	= $item.children('span').text();
+
+								preloadImage( largeSrc, function() {
+
+									$loading.hide();
+
+									//get dimentions for the image, based on the windows size
+									var	dim	= getImageDim( largeSrc );
+
+									$preview.children('img.ib-preview-img')
+												    .attr( 'src', largeSrc )
+													.css({
+										width	: dim.width,
+										height	: dim.height,
+										left	: dim.left,
+										top		: dim.top
+													})
+													.end()
+													.find('span.ib-preview-descr')
+													.text( description );
+
+									$ibWrapper.scrollTop( $item.offset().top )
+											  .scrollLeft( $item.offset().left );
+
+									isAnimating	= false;
+
+								});
+
+							},
+							// closes the fullscreen image item
+							closeImgPreview				= function() {
+
+								if( isAnimating ) return false;
+
+								isAnimating	= true;
+
+								var $item	= $ibImgItems.eq( current );
+
+								$('#ib-img-preview').find('span.ib-preview-descr, div.ib-nav, span.ib-close')
+												.hide()
+												.end()
+												.animate({
+													height	: $item.height(),
+													top		: $item.offset().top
+													}, 500, 'easeOutExpo', function() {
+
+													$(this).animate({
+														width	: $item.width(),
+														left	: $item.offset().left
+														}, 400, function() {
+
+															$(this).fadeOut(function() {isAnimating	= false;});
+
+													} );
+
+												});
+
+							},
+							// closes the fullscreen content item
+							closeContentPreview			= function() {
+
+								if( isAnimating ) return false;
+
+								isAnimating	= true;
+
+								var $item	= $ibItems.not('.ib-image').eq( current );
+
+								$('#ib-content-preview').find('div.ib-teaser, div.ib-content-full, span.ib-close')
+														.hide()
+														.end()
+														.animate({
+															height	: $item.height(),
+															top		: $item.offset().top
+														}, 500, 'easeOutExpo', function() {
+
+															$(this).animate({
+																width	: $item.width(),
+																left	: $item.offset().left
+															}, 400, function() {
+
+																$(this).fadeOut(function() {isAnimating	= false;});
+
+															} );
+
+														});
+
+							},
+							// get the size of one image to make it full size and centered
+							getImageDim					= function( src ) {
+
+								var img     	= new Image();
+								img.src     	= src;
+
+								var w_w	= $(window).width(),
+									w_h	= $(window).height(),
+									r_w	= w_h / w_w,
+									i_w	= img.width,
+									i_h	= img.height,
+									r_i	= i_h / i_w,
+									new_w, new_h,
+									new_left, new_top;
+
+								if( r_w > r_i ) {
+
+									new_h	= w_h;
+									new_w	= w_h / r_i;
+
+								}
+								else {
+
+									new_h	= w_w * r_i;
+									new_w	= w_w;
+
+								}
+
+								return {
+									width	: new_w,
+									height	: new_h,
+									left	: (w_w - new_w) / 2,
+									top		: (w_h - new_h) / 2
+								};
+
+							};
+
+						return { init : init };
+
+					})();
+
+				Template.init();
+
+            });
+    </script>
 </body>
 </html>

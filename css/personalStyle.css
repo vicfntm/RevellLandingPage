@@ -24,6 +24,7 @@ p {
 .someInfo1 {
     background-image: url('/pics/19809-NSARH7.jpg');
     background-repeat:no-repeat;
+    height:250px;
 }
 .glyphs{
    width:64px;
@@ -43,7 +44,18 @@ p {
 }
 
 .svgPutHere{
-    height:300px;
+    height:0px;
     object-position:center;
 }
+.svgPics{
+    width:200px;
+    height:200px;
+    padding-top:75px;
+    
 
+}
+.svgPics-pl {
+    width:275px;
+    height:260px;
+    
+}
