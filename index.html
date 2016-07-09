@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
     <title>Revell - build yor dream</title>
     <link href='https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
@@ -19,48 +20,219 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-     
+        
 
     <![endif]-->
     <script src="js/jquery.slabtext.js"></script>
-    <script src="js/jquery-1.11.1.min.js"></script>
+   <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/script.js"></script>
+    
+    <!--gallery scripts-->
+    <!-- Add jQuery library -->
+    <script type="text/javascript" src="lib/jquery-1.9.0.min.js"></script>
 
-    <noscript>
-        <style>
-            .ib-main a {
-                cursor: pointer;
-            }
+    <!-- Add mousewheel plugin (this is optional) -->
+    <script type="text/javascript" src="lib/jquery.mousewheel-3.0.6.pack.js"></script>
 
-            .ib-main-wrapper {
-                position: absolute;
-                top: 0px;
-                bottom: 24px;
-                overflow: scroll;
-            }
-        </style>
-    </noscript>
+    <!-- Add fancyBox main JS and CSS files -->
+    <script type="text/javascript" src="source/jquery.fancybox.js?v=2.1.4"></script>
+    <link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.1.4" media="screen" />
+   
+    <!-- Add Button helper (this is optional) -->
+    <link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+    <script type="text/javascript" src="source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+    <!-- Add Thumbnail helper (this is optional) -->
+    <link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+    <script type="text/javascript" src="source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+    <!-- Add Media helper (this is optional) -->
+    <script type="text/javascript" src="source/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
+
+    <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+    </script>
+    <style type="text/css">
+        .fancybox-custom .fancybox-skin {
+            box-shadow: 0 0 50px #222;
+        }
+    </style>
 
    <!-- <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />-->
-    <script id="previewTmpl" type="text/x-jquery-tmpl">
-        <div id="ib-img-preview" class="ib-preview">
-            <img src="${src}" alt="" class="ib-preview-img" />
-            <span class="ib-preview-descr" style="display:none;">${description}</span>
-            <div class="ib-nav" style="display:none;">
-                <span class="ib-nav-prev">Previous</span>
-                <span class="ib-nav-next">Next</span>
-            </div>
-            <span class="ib-close" style="display:none;">Close Preview</span>
-            <div class="ib-loading-large" style="display:none;">Loading...</div>
-        </div>
-    </script>
-    <script id="contentTmpl" type="text/x-jquery-tmpl">
-        <div id="ib-content-preview" class="ib-content-preview">
-            <div class="ib-teaser" style="display:none;">{{html teaser}}</div>
-            <div class="ib-content-full" style="display:none;">{{html content}}</div>
-            <span class="ib-close" style="display:none;">Close Preview</span>
-        </div>
-    </script>	
+ 
 </head>
 <body>
     <!--Menu-->
@@ -109,53 +281,74 @@
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
     </div>
     <div class="row someInfo1">
-        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+
+        </div>
 
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 svgPutHere">
-            <a href="#"><img class="svgPics img-responsive" src="pics/1467840132_death_star.svg" /></a>
+            <a href="#startgallery"> <img class="svgPics img-responsive" src="pics/1467840132_death_star.svg" id="starwars" />StarWars</a>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            <a href="#"> <img class="svgPics img-responsive" src="pics/1467894761_beetle.svg" /></a>
+            <a href="#startgallery"> <img class="svgPics img-responsive" src="pics/1467894761_beetle.svg" id="crs" />Cars</a>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            <a href="#"><img class="svgPics img-responsive" src="pics/1467839995_aiga_water_transportation_bg.svg" /></a>
+            <a href="#startgallery"><img class="svgPics img-responsive" src="pics/1467839995_aiga_water_transportation_bg.svg" id="shps" />Корабли</a>
 
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <a href="#"> <img class="svgPics-pl img-responsive" src="pics/1467839728_plane.svg" /></a>
+            <a href="#startgallery"> <img class="svgPics-pl img-responsive" src="pics/1467839728_plane.svg" id="plns" />Самолеты</a>
         </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <a href="#startgallery"> <img class="svgPics img-responsive" src="pics/tank.svg" id="plns" />Танки</a>
+        </div>
+
     </div>
+    <a id="startgallery" href=""></a>
     <div class="row">
-        <div class="col-xs-1 col-sm-1 co1-md-1 col-lg-1"></div>
-        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-10">
-            <div id="ib-main-wrapper">
-                <div class="ib-main" style="padding-left:100px">
-                    <a href="#">
-                        <img src="/revell/star_W/falcon_small.jpg" data-largesrc="/revell/star_W/falcon_big.jpg" alt="" />
-                        <span>Первое фото</span>
-        
-                    </a>
-                    <a href="">
-                        <img src="/revell/star_W/luke_small.jpg" data-largesrc="/revell/star_W/luke_big.jpg" alt="" />
-                        <span></span>
-                    </a>
-                    <a href="">
-                        <img src="/revell/star_W/poesxwing_small.jpg" data-largesrc="/revell/star_W/poesxwing_big.jpg" alt="" />
-                        <span></span>
-                    </a>
-                    <a href="">
-                        <img src="/revell/star_W/x-wing_small.jpg" data-largesrc="/revell/star_W/x-wing_big.jpg" alt="" />
-                        <span></span>
-                    </a>
-                    <a href="">
-                        <img src="/revell/star_W/xwing2_small.jpg" data-largesrc="/revell/star_W/xwing2_big.jpg" alt="" />
-                        <span></span>
-                    </a>
+
+
+            <div class="col-xs-11 col-sm-11 co1-md-11 col-lg-11">
+                <div id="sw">
+                    <a class="fancybox" href="revell/star_W/falcon_big.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/star_W/falcon_small.jpg" alt="" /></a>
+                    <a class="fancybox" href="revell/star_W/luke_big.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/star_W/luke_small.jpg" alt="" /></a>
+                    <a class="fancybox" href="revell/star_W/poesxwing_big.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/star_W/poesxwing_small.jpg" alt="" /></a>
+                    <a class="fancybox" href="revell/star_W/x-wing_big.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/star_W/x-wing_small.jpg" alt="" /></a>
+                    <a class="fancybox" href="revell/star_W/xwing2_big.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/star_W/xwing2_small.jpg" alt="" /></a>
                 </div>
+<hr>
+                <div style="margin-left:100px" id="ships">
+                    <a class="fancybox" href="revell/ships/05422__s_mr_cutty_sark_big.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/ships/05422__s_mr_cutty_sark_small.jpg" alt="" /></a>
+                    <a class="fancybox" href="revell/ships/80-5404-lg.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/ships/80-5404-small.jpg" alt="" /></a>
+                    <a class="fancybox" href="revell/ships/80-5204-lg.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/ships/80-5204-small.jpg" alt="" /></a>
+                    <a class="fancybox" href="revell/ships/80-5472-lg.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/ships/80-5472-small.jpg" alt="" /></a>
+                    <a class="fancybox" href="revell/ships/85-0398-lg.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/ships/85-0398-small.jpg" alt="" /></a>
+
+                </div>
+                <hr>
+                <div style="margin-left:100px" id="tanks2">
+                    <a class="fancybox" href="revell/tanks/panzergaubitze1_big.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/tanks/panzergaubitze1_small.jpg" alt="" /></a>
+                    <a class="fancybox" href="revell/tanks/panzergaubitze2_big.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/tanks/panzergaubitze2_small.jpg" alt="" /></a>
+                    <a class="fancybox" href="revell/tanks/t90_big.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/tanks/t90_small.jpg" alt="" /></a>
+                    <a class="fancybox" href="revell/tanks/stug_3_2_big.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/tanks/stug_3_2_small.jpg" alt="" /></a>
+                    <a class="fancybox" href="revell/tanks/stug_3_3_big.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/tanks/stug_3_3_small.jpg" alt="" /></a>
+ 
+                </div>
+                <hr>
+                <div style="margin-left:100px" id="tanks">
+                    <a class="fancybox" href="revell/tanks/stug_3_4_big.JPG" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/tanks/stug_3_4_small.JPG" alt="" /></a>
+                    <a class="fancybox" href="revell/tanks/stug_3_5_big.JPG" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/tanks/stug_3_5_small.JPG" alt="" /></a>
+                    <a class="fancybox" href="revell/tanks/stug3_big.JPG" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/tanks/stug3_small.jpg" alt="" /></a>
+                    <a class="fancybox" href="revell/tanks/stug40_big.JPG" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/tanks/stug40_small.jpg" alt="" /></a>
+                    <a class="fancybox" href="revell/tanks/t90_big.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="revell/tanks/t90_small.jpg" alt="" /></a>
+
+                </div>
+                <hr>
+  
             </div>
+
+
         </div>
-        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
-       </div>
+
 
     <p>
         Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
@@ -163,10 +356,7 @@
         Fusce non varius purus aenean nec magna felis fusce vestibulum velit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt, turpis dui ornare nisl, sollicitudin interdum turpis nunc eget.
         Sem nulla eu ultricies orci praesent id augue nec lorem pretium congue sit amet ac nunc fusce iaculis lorem eu diam hendrerit at mattis purus dignissim vivamus mauris tellus, fringilla.
         Vel dapibus a, blandit quis erat vivamus elementum aliquam luctus etiam fringilla pretium sem vitae sodales mauris id nulla est praesent laoreet, metus vel auctor aliquam, eros purus vulputate leo.
-        Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
-        Placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante.
-        Fusce non varius purus aenean nec magna felis fusce vestibulum velit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt, turpis dui ornare nisl, sollicitudin interdum turpis nunc eget.
-        Sem nulla eu ultricies orci praesent id augue nec lorem pretium congue sit amet ac nunc fusce iaculis lorem eu diam hendrerit at mattis purus dignissim vivamus mauris tellus, fringilla.
+        Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor,
         Vel dapibus a, blandit quis erat vivamus elementum aliquam luctus etiam fringilla pretium sem vitae sodales mauris id nulla est praesent laoreet, metus vel auctor aliquam, eros purus vulputate leo.
         Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
         Placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante.
@@ -175,446 +365,13 @@
         Vel dapibus a, blandit quis erat vivamus elementum aliquam luctus etiam fringilla pretium sem vitae sodales mauris id nulla est praesent laoreet, metus vel auctor aliquam, eros purus vulputate leo.
     </p>
 
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
-    <script type="text/javascript" src="js/jquery.kinetic.js"></script>
-    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-    <script type="text/javascript">
-            $(function() {
 
-				var $ibWrapper	= $('#ib-main-wrapper'),
 
-					Template	= (function() {
-
-							// true if dragging the container
-						var kinetic_moving				= false,
-							// current index of the opened item
-							current						= -1,
-							// true if the item is being opened / closed
-							isAnimating					= false,
-							// items on the grid
-							$ibItems					= $ibWrapper.find('div.ib-main > a'),
-							// image items on the grid
-							$ibImgItems					= $ibItems.not('.ib-content'),
-							// total image items on the grid
-							imgItemsCount				= $ibImgItems.length,
-							init						= function() {
-
-								// add a class ib-image to the image items
-								$ibImgItems.addClass('ib-image');
-								// apply the kinetic plugin to the wrapper
-								loadKinetic();
-								// load some events
-								initEvents();
-
-							},
-							loadKinetic					= function() {
-
-								setWrapperSize();
-
-								$ibWrapper.kinetic({
-									moved	: function() {
-
-										kinetic_moving = true;
-
-									},
-									stopped	: function() {
-
-										kinetic_moving = false;
-
-									}
-								});
-
-							},
-							setWrapperSize				= function() {
-
-								var containerMargins	= $('#ib-top').outerHeight(true) + $('#header').outerHeight(true) + parseFloat( $ibItems.css('margin-top') );
-								$ibWrapper.css( 'height', $(window).height() - containerMargins )
-
-							},
-							initEvents					= function() {
-
-								// open the item only if not dragging the container
-								$ibItems.bind('click.ibTemplate', function( event ) {
-
-									if( !kinetic_moving )
-										openItem( $(this) );
-
-									return false;
-
-								});
-
-								// on window resize, set the wrapper and preview size accordingly
-								$(window).bind('resize.ibTemplate', function( event ) {
-
-									setWrapperSize();
-
-									$('#ib-img-preview, #ib-content-preview').css({
-										width	: $(window).width(),
-										height	: $(window).height()
-									})
-
-								});
-
-							},
-							openItem					= function( $item ) {
-
-								if( isAnimating ) return false;
-
-								// if content item
-								if( $item.hasClass('ib-content') ) {
-
-									isAnimating	= true;
-									current	= $item.index('.ib-content');
-									loadContentItem( $item, function() { isAnimating = false; } );
-
-								}
-								// if image item
-								else {
-
-									isAnimating	= true;
-									current	= $item.index('.ib-image');
-									loadImgPreview( $item, function() { isAnimating = false; } );
-
-								}
-
-							},
-							// opens one image item (fullscreen)
-							loadImgPreview				= function( $item, callback ) {
-
-								var largeSrc		= $item.children('img').data('largesrc'),
-									description		= $item.children('span').text(),
-									largeImageData	= {
-										src			: largeSrc,
-										description	: description
-									};
-
-								// preload large image
-								$item.addClass('ib-loading');
-
-								preloadImage( largeSrc, function() {
-
-									$item.removeClass('ib-loading');
-
-									var hasImgPreview	= ( $('#ib-img-preview').length > 0 );
-
-									if( !hasImgPreview )
-										$('#previewTmpl').tmpl( largeImageData ).insertAfter( $ibWrapper );
-									else
-										$('#ib-img-preview').children('img.ib-preview-img').attr( 'src', largeSrc );
-
-									//get dimentions for the image, based on the windows size
-									var	dim	= getImageDim( largeSrc );
-
-									$item.removeClass('ib-img-loading');
-
-									//set the returned values and show/animate preview
-									$('#ib-img-preview').css({
-										width	: $item.width(),
-										height	: $item.height(),
-										left	: $item.offset().left,
-										top		: $item.offset().top
-									}).children('img.ib-preview-img').hide().css({
-										width	: dim.width,
-										height	: dim.height,
-										left	: dim.left,
-										top		: dim.top
-									}).fadeIn( 400 ).end().show().animate({
-										width	: $(window).width(),
-										left	: 0
-									}, 500, 'easeOutExpo', function() {
-
-										$(this).animate({
-											height	: $(window).height(),
-											top		: 0
-										}, 400, function() {
-
-											var $this	= $(this);
-											$this.find('span.ib-preview-descr, span.ib-close').show()
-											if( imgItemsCount > 1 )
-												$this.find('div.ib-nav').show();
-
-											if( callback ) callback.call();
-
-										});
-
-									});
-
-									if( !hasImgPreview )
-										initImgPreviewEvents();
-
-								} );
-
-							},
-							// opens one content item (fullscreen)
-							loadContentItem				= function( $item, callback ) {
-
-								var hasContentPreview	= ( $('#ib-content-preview').length > 0 ),
-									teaser				= $item.children('div.ib-teaser').html(),
-									content				= $item.children('div.ib-content-full').html(),
-									contentData			= {
-										teaser		: teaser,
-										content		: content
-									};
-
-								if( !hasContentPreview )
-									$('#contentTmpl').tmpl( contentData ).insertAfter( $ibWrapper );
-
-								//set the returned values and show/animate preview
-								$('#ib-content-preview').css({
-									width	: $item.width(),
-									height	: $item.height(),
-									left	: $item.offset().left,
-									top		: $item.offset().top
-								}).show().animate({
-									width	: $(window).width(),
-									left	: 0
-								}, 500, 'easeOutExpo', function() {
-
-									$(this).animate({
-										height	: $(window).height(),
-										top		: 0
-									}, 400, function() {
-
-										var $this	= $(this),
-											$teaser	= $this.find('div.ib-teaser'),
-											$content= $this.find('div.ib-content-full'),
-											$close	= $this.find('span.ib-close');
-
-										if( hasContentPreview ) {
-											$teaser.html( teaser )
-											$content.html( content )
-										}
-
-										$teaser.show();
-										$content.show();
-										$close.show();
-
-										if( callback ) callback.call();
-
-									});
-
-								});
-
-								if( !hasContentPreview )
-									initContentPreviewEvents();
-
-							},
-							// preloads an image
-							preloadImage				= function( src, callback ) {
-
-								$('<img/>').load(function(){
-
-									if( callback ) callback.call();
-
-								}).attr( 'src', src );
-
-							},
-							// load the events for the image preview : navigation ,close button, and window resize
-							initImgPreviewEvents		= function() {
-
-								var $preview	= $('#ib-img-preview');
-
-								$preview.find('span.ib-nav-prev').bind('click.ibTemplate', function( event ) {
-
-									navigate( 'prev' );
-
-								}).end().find('span.ib-nav-next').bind('click.ibTemplate', function( event ) {
-
-									navigate( 'next' );
-
-								}).end().find('span.ib-close').bind('click.ibTemplate', function( event ) {
-
-									closeImgPreview();
-
-								});
-
-								//resizing the window resizes the preview image
-								$(window).bind('resize.ibTemplate', function( event ) {
-
-									var $largeImg	= $preview.children('img.ib-preview-img'),
-										dim			= getImageDim( $largeImg.attr('src') );
-
-									$largeImg.css({
-										width	: dim.width,
-										height	: dim.height,
-										left	: dim.left,
-										top		: dim.top
-									})
-
-								});
-
-							},
-							// load the events for the content preview : close button
-							initContentPreviewEvents	= function() {
-
-								$('#ib-content-preview').find('span.ib-close').bind('click.ibTemplate', function( event ) {
-
-									closeContentPreview();
-
-								});
-
-							},
-							// navigate the image items in fullscreen mode
-							navigate					= function( dir ) {
-
-								if( isAnimating ) return false;
-
-								isAnimating		= true;
-
-								var $preview	= $('#ib-img-preview'),
-									$loading	= $preview.find('div.ib-loading-large');
-
-								$loading.show();
-
-								if( dir === 'next' ) {
-
-									( current === imgItemsCount - 1 ) ? current	= 0 : ++current;
-
-								}
-								else if( dir === 'prev' ) {
-
-									( current === 0 ) ? current	= imgItemsCount - 1 : --current;
-
-								}
-
-								var $item		= $ibImgItems.eq( current ),
-									largeSrc	= $item.children('img').data('largesrc'),
-									description	= $item.children('span').text();
-
-								preloadImage( largeSrc, function() {
-
-									$loading.hide();
-
-									//get dimentions for the image, based on the windows size
-									var	dim	= getImageDim( largeSrc );
-
-									$preview.children('img.ib-preview-img')
-												    .attr( 'src', largeSrc )
-													.css({
-										width	: dim.width,
-										height	: dim.height,
-										left	: dim.left,
-										top		: dim.top
-													})
-													.end()
-													.find('span.ib-preview-descr')
-													.text( description );
-
-									$ibWrapper.scrollTop( $item.offset().top )
-											  .scrollLeft( $item.offset().left );
-
-									isAnimating	= false;
-
-								});
-
-							},
-							// closes the fullscreen image item
-							closeImgPreview				= function() {
-
-								if( isAnimating ) return false;
-
-								isAnimating	= true;
-
-								var $item	= $ibImgItems.eq( current );
-
-								$('#ib-img-preview').find('span.ib-preview-descr, div.ib-nav, span.ib-close')
-												.hide()
-												.end()
-												.animate({
-													height	: $item.height(),
-													top		: $item.offset().top
-													}, 500, 'easeOutExpo', function() {
-
-													$(this).animate({
-														width	: $item.width(),
-														left	: $item.offset().left
-														}, 400, function() {
-
-															$(this).fadeOut(function() {isAnimating	= false;});
-
-													} );
-
-												});
-
-							},
-							// closes the fullscreen content item
-							closeContentPreview			= function() {
-
-								if( isAnimating ) return false;
-
-								isAnimating	= true;
-
-								var $item	= $ibItems.not('.ib-image').eq( current );
-
-								$('#ib-content-preview').find('div.ib-teaser, div.ib-content-full, span.ib-close')
-														.hide()
-														.end()
-														.animate({
-															height	: $item.height(),
-															top		: $item.offset().top
-														}, 500, 'easeOutExpo', function() {
-
-															$(this).animate({
-																width	: $item.width(),
-																left	: $item.offset().left
-															}, 400, function() {
-
-																$(this).fadeOut(function() {isAnimating	= false;});
-
-															} );
-
-														});
-
-							},
-							// get the size of one image to make it full size and centered
-							getImageDim					= function( src ) {
-
-								var img     	= new Image();
-								img.src     	= src;
-
-								var w_w	= $(window).width(),
-									w_h	= $(window).height(),
-									r_w	= w_h / w_w,
-									i_w	= img.width,
-									i_h	= img.height,
-									r_i	= i_h / i_w,
-									new_w, new_h,
-									new_left, new_top;
-
-								if( r_w > r_i ) {
-
-									new_h	= w_h;
-									new_w	= w_h / r_i;
-
-								}
-								else {
-
-									new_h	= w_w * r_i;
-									new_w	= w_w;
-
-								}
-
-								return {
-									width	: new_w,
-									height	: new_h,
-									left	: (w_w - new_w) / 2,
-									top		: (w_h - new_h) / 2
-								};
-
-							};
-
-						return { init : init };
-
-					})();
-
-				Template.init();
-
-            });
-    </script>
 </body>
+
 </html>
