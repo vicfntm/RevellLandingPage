@@ -4,27 +4,40 @@
         $("#planes").fadeOut();
         $("#tanks").fadeOut();
         $("#ships").fadeOut();
-        $("#sw").fadeIn("slow");
+        $("#tanks").fadeOut();        
+        $("#swrs").fadeIn("slow");
     })
     $("#crs").click(function () {
-        $("#sw").fadeOut();
+        $("#swrs").fadeOut();
         $("#planes").fadeOut();
         $("#tanks").fadeOut();
         $("#ships").fadeOut();
+        $("#tanks").fadeOut();
         $("#cars").fadeIn("slow");
     })
     $("#shps").click(function () {
-        $("#sw").fadeOut();
+        $("#swrs").fadeOut();
         $("#planes").fadeOut();
         $("#tanks").fadeOut();
         $("#cars").fadeOut();
+        $("#tanks").fadeOut();
         $("#ships").fadeIn("slow");
     })
     $("#plns").click(function () {
-        $("#sw").fadeOut();
+        $("#swrs").fadeOut();
         $("#cars").fadeOut();
         $("#tanks").fadeOut();
         $("#ships").fadeOut();
+        $("#tanks").fadeOut();
         $("#planes").fadeIn("slow");
+    })
+    $("#tank").click(function () {
+        $("#swrs").fadeOut();
+        $("#cars").fadeOut();
+        $("#tanks").fadeOut();
+        $("#ships").fadeOut();
+        $("#planes").fadeOut()
+        $("#tanks").fadeIn("slow");
+        
     })
 })

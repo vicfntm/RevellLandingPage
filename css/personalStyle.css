@@ -24,7 +24,8 @@ p {
 .someInfo1 {
     background-image: url('/pics/19809-NSARH7.jpg');
     background-repeat:no-repeat;
-    height:250px;
+
+    padding-left:50px;
 }
 .glyphs{
    width:64px;
@@ -50,7 +51,7 @@ p {
 .svgPics{
     width:200px;
     height:200px;
-    padding-top:75px;
+    padding-top:40px;
     
 
 }
@@ -58,4 +59,24 @@ p {
     width:300px;
     height:200px;
     
+}
+.seriesName{
+    text-align-last:center;
+    font-family:'Merriweather', serif;
+    font-size:large;
+    color:white;
+    padding-top:10px;
+    
+}
+h2{
+    font-family:'Merriweather', serif;
+}
+h3 {
+    font-family:'Merriweather', serif;
+}
+#right-icons {
+    padding-top:10px !important;
+    padding-bottom:0px !important;
+    position:relative;
+ 
 }
