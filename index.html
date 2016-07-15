@@ -9,12 +9,14 @@
     <title>Revell - build yor dream</title>
     <link href='https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/personalStyle.css" rel="stylesheet" />
     <link href="css/slabtext.css" rel="stylesheet" />
     <link href="css/mediaSz.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="/pics/1468611170_ic_settings_48px.ico" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -37,50 +39,75 @@
 
 </head>
 <body>
+    <a id="beginning" style="margin-top:55px"></a>
     <!--Menu-->
-    <nav class="navbar navbar-default navbar-fixed-top" id="menu">
+    <nav class="navbar navbar-default navbar-fixed-top menuTxt" id="menu">
         <div class="container-fluid">
-            <div class="navbar-header">
+            <div class="navbar-header easyscroll">
                 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#mn">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="#mainPic" class="navbar-brand"><img src="pics/home.svg" /></a>
+                <a href="#beginning" class="navbar-brand" ><img src="pics/home.svg" /></a>
             </div>
-            <div id="mn" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav" id="mn">
-                    <li class="active"><a href="#aboutRev">Что такое Revell</a></li>
-                    <li><a href="#goods">Товары</a></li>
-                    <li><a href="#contacts">Контакты</a></li>
-                    <li><a href="#other">Галерея</a></li>
-                    <li><a href="#other">Прочее</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right " >
-                    <li>
-                        <a href="https://www.facebook.com/Revell" id="right-icons" target="_blank">
+            <div class="collapse navbar-collapse" id="mn">
+                <div class="easyscroll">
+                    <ul class="nav navbar-nav">
 
-                            <img src="pics/1468439721_Facebook_Rounded_Solid_32.png" />
-                        </a>
+                        <li class="active"><a href="#beginning">На главную</a></li>
+                        <li><a href="#aboutRev">Что такое Revell</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Товары
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#swrs">Star Wars / SciFi</a></li>
+                                <li><a href="#cars">Cars</a></li>
+                                <li><a href="#ships">Ships</a></li>
+                                <li><a href="#planes">Planes/Helicopters</a></li>
+                                <li><a href="#tanks">Tanks</a></li>
+                                <li><a href="#acess">Аксессуары</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="history.html">История</a></li>
+                        <li><a href="usefullinks.html">Полезные ссылки</a></li>
+                        <li><a href="others.html">Прочее</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right ">
+                        <li>
+                            <a href="https://www.facebook.com/Revell" id="right-icons" target="_blank">
+
+                                <img src="pics/1468439721_Facebook_Rounded_Solid_32.png" />
+                            </a>
 
 
-                    </li>
-                    <li>
-                    </li>
-                </ul>
-            </div>
+                        </li>
+                        <li>
+                        </li>
+                    </ul>
+                </div>
         </div>
     </nav>
 
     <!--Jumbotron-->
 
     <div class="container container-fluid">
-        <img class="img-responsive" id="mainPic" src="revell/80-5060-lg.jpg" />
-
+        <div> <img class="img-responsive revell-logo" src="pics/Revell_Logo.png" /> </div>
+        <div><img class="img-responsive" id="mainPic" src="revell/80-5060-lg.jpg" /></div>
+        
     </div>
-    <h1 class="mainHeader"><span class="slabtext"> Revell - build your dream</span></h1>
-    <div class="row">
+    
+    <div>
+        <h1 class="mainHeader"><span class="slabtext"> Revell - build your dream</span></h1>
+    </div>
+    <div class="row descrBlock">
         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
             <p id="aboutRev">
@@ -138,7 +165,7 @@
         </div>
     </div>
     <div id="swrs">
-        <div class="row">
+        <div class="row descrBlock">
             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
             <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
 
@@ -203,7 +230,7 @@
 
     </div>
     <div id="cars">
-        <div class="row">
+        <div class="row descrBlock">
             <div class="col-xs-1 col-sm-1 co1-md-1 col-lg-1"></div>
             <div class="col-xs-9 col-sm-9 co1-md-9 col-lg-9">
                 <div class="mainTxt">
@@ -249,7 +276,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row descrBlock">
             <div class="col-xs-1 col-sm-1 co1-md-1 col-lg-1"></div>
             <div class="col-xs-9 col-sm-9 co1-md-9 col-lg-9">
                 <div class="mainTxt">
@@ -287,7 +314,7 @@
 
 
 
-        <div class="row">
+        <div class="row descrBlock">
             <div class="col-xs-1 col-sm-1 co1-md-1 col-lg-1"></div>
             <div class="col-xs-9 col-sm-9 co1-md-9 col-lg-9">
                 <div class="mainTxt">
@@ -328,7 +355,7 @@
     </div>
 
     <div id="ships">
-        <div class="row">
+        <div class="row descrBlock">
             <div class="col-xs-1 col-sm-1 co1-md-1 col-lg-1"></div>
             <div class="col-xs-9 col-sm-9 co1-md-9 col-lg-9">
                 <div class="mainTxt">
@@ -361,9 +388,49 @@
         </div>
     </div>
 
+    <div id="planes">
+        <div class="row descrBlock">
+            <div class="col-xs-1 col-sm-1 co1-md-1 col-lg-1"></div>
+            <div class="col-xs-9 col-sm-9 co1-md-9 col-lg-9">
+                <div class="mainText">
+                    <h2>Авиация</h2>
+                    <p>
+                        Вся история Люфтваффе и антигитлеровской коалиции, а также наше время.
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-2 co1-md-2 col-lg-2"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-1 col-sm-1 co1-md-1 col-lg-1"></div>
+            <div class="col-xs-11 col-sm-11 co1-md-11 col-lg-11">
+
+                <div style="padding-top:10px">
+                    <a class="venobox" data-gall="pln" href="revell/planes/lancaster_large.jpg" title="Etiam quis mi eu elit temp"><img src="revell/planes/lancaster_small.jpg" /></a>
+                    <a class="venobox" data-gall="pln" href="revell/planes/fw190prtrnfweb_2.jpg" title="Etiam quis mi eu elit temp"><img src="revell/planes/fw190prtrnfweb_2_small.jpg" /></a>
+
+
+
+                    <a class="venobox" data-gall="pln" href="revell/planes/rev04673_13_big.jpg" title="Etiam quis mi eu elit temp"><img src="revell/planes/rev04673_13_small.jpg" /></a>
+                    <a class="venobox" data-gall="pln" href="revell/planes/Revell-04900_smpw_b1b_bomber_big.jpg" title="Etiam quis mi eu elit temp"><img src="revell/planes/Revell-04900_smpw_b1b_bomber_big_small.jpg" /></a>
+
+                    <a class="venobox" data-gall="pln" href="revell/planes/106216_Revell_FA_18F_SUPER_HORNET_twin_seater_172_Revell_GmbH_0486463488_900.jpg" title="Etiam quis mi eu elit temp"><img src="revell/planes/106216_Revell_FA_18F_SUPER_HORNET_twin_seater_172_Revell_GmbH_0486463488_900_small.jpg" /></a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
 
     <div id="tanks">
-        <div class="row">
+        <div class="row descrBlock">
             <div class="col-xs-1 col-sm-1 co1-md-1 col-lg-1"></div>
             <div class="col-xs-9 col-sm-9 co1-md-9 col-lg-9">
                 <div class="mainText">
@@ -423,92 +490,58 @@
     </div>
 
 
-
-    <div id="planes">
-        <div class="row">
+   
+    <hr />
+    <div id="acess">
+        <div class="row descrBlock">
             <div class="col-xs-1 col-sm-1 co1-md-1 col-lg-1"></div>
             <div class="col-xs-9 col-sm-9 co1-md-9 col-lg-9">
-                <div class="mainText">
-                    <h2>Авиация</h2>
-                    <p>
-                        Вся история Люфтваффе и антигитлеровской коалиции, а также наше время.
-                    </p>
+                <h2>Аксессуары</h2>
+                <p>
 
-                </div>
+                    Отдельного внимания заслуживают аксессуары от Revell.
+                </p>
+                <p>
+                    Купить в Киеве и вообще в стране можно на сегодня довольно ограниченный перечень оригинальных аксессуаров. Это связанно единственно с падением платежного спроса, так моделизм вообще на сегодняшний момент хобби затратное.
+                </p>
+                <p>
+                    Таким образом, широчайший ассортимент акриловых красок оказался за бортом, в связи с ограниченным сроком годности. То же самое произошло с компрессорами/аэрографами.
+                </p>
+                <h3>Так что же есть?</h3>
+                <p>Хорошо представлены эмалевые краски, клеи и кисти.</p>
+                <p>
+                    Эмалевые краски в отличии от акриловых очень долго хранятся, восстанавливаются добавлением растворителя в подсохший пигмент, легко ложатся на неподготовленые поверхности и удобны для работы начинающих моделистов в этом смысле. Эмалевые краски имеют существенные недостатки - сильный запах, длительный период высыхания. Особенно неприятно, что в принципе этот тип красок может быть токсичным и требует работы в хорошо проветриваемых помещениях. В мире происходит стабильный сдвиг в сторону акриловых красок, которые на порядок меньше пахнут, и высыхают буквально в считанные минуты создавая слой полимера. Однако, у нас массовый потребитель пока не готов вбухивать сотни гривен денег в покупки товаров не первой необходимости, так что этот рынок находится в зачаточном состоянии.
+                </p>
+                <p>
+                    Revell производит достаточное количество оттенков в RAL-палитре, необходимое для передачи натуральных расцветок техники, а также металлизированные краски, которые приемлемо передают оттенок меди, золота, железа и лаки. Кроме этого можно выбирать тип краски лаковая/матовая для различных типов техники.
+                </p>
+                <h3>Клей</h3>
+                <p>
+                    Самый популярный аксессуар и самый ходовой в ассортименте - клей. У Revell отличный клей, локально размягчающий пластик, который позволяет за секунды провести сварку двух поверхностей. Базовый клей применяется для небольших неокрашенных поверхностей.
+                </p>
+                <img style="width:300px" src="revell/glues/contacta1.jpg" />
+                <p>
+                    Для больших поверхностей можно применять аналогичный клей с кисточкой либо гель. Первый позволяет сделать быструю обработку склеиваемых поверхностей. Гель удобен медленным засыханием (до 30 мин), что также позволяет более точно и аккуратно произвести соединение крупных фрагментов модели (например, корпуса парусника).
+
+                </p>
+                <img style="width:300px" src="revell/glues/contacta2.jpg" />
+                <img style="width:300px" src="revell/glues/contacta3.jpg" />
+
+                <p>
+                    Для специальных поверхностей с хромовыми деталями применяется клей Contacta Liquid Special.
+                </p>
+                <img style="width:300px" src="revell/glues/contacta4.jpg" />
+                <p>
+                    Для быстрого склеивания любых поверхностей/материалов подходит Contacta Quick. Правда, как и любой универсал с работой справляется несколько хуже, чем специальные клеи. Contacta Quick - это обычный цианапан/цианакрилат, - тот клей который можно купить в любом супермаркете, и я бы не советовал переплачивать в этом конкретном случае за бренд Revell.
+                </p>
+                <img style="width:300px" src="revell/glues/contacta5.jpg" />
             </div>
-            <div class="col-xs-2 col-sm-2 co1-md-2 col-lg-2"></div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-1 col-sm-1 co1-md-1 col-lg-1"></div>
-            <div class="col-xs-11 col-sm-11 co1-md-11 col-lg-11">
-
-                <div style="padding-top:10px">
-                    <a class="venobox" data-gall="pln" href="revell/planes/lancaster_large.jpg" title="Etiam quis mi eu elit temp"><img src="revell/planes/lancaster_small.jpg" /></a>
-                    <a class="venobox" data-gall="pln" href="revell/planes/fw190prtrnfweb_2.jpg" title="Etiam quis mi eu elit temp"><img src="revell/planes/fw190prtrnfweb_2_small.jpg" /></a>
-
-
-
-                    <a class="venobox" data-gall="pln" href="revell/planes/rev04673_13_big.jpg" title="Etiam quis mi eu elit temp"><img src="revell/planes/rev04673_13_small.jpg" /></a>
-                    <a class="venobox" data-gall="pln" href="revell/planes/Revell-04900_smpw_b1b_bomber_big.jpg" title="Etiam quis mi eu elit temp"><img src="revell/planes/Revell-04900_smpw_b1b_bomber_big_small.jpg" /></a>
-
-                    <a class="venobox" data-gall="pln" href="revell/planes/106216_Revell_FA_18F_SUPER_HORNET_twin_seater_172_Revell_GmbH_0486463488_900.jpg" title="Etiam quis mi eu elit temp"><img src="revell/planes/106216_Revell_FA_18F_SUPER_HORNET_twin_seater_172_Revell_GmbH_0486463488_900_small.jpg" /></a>
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-
-
-    </div>
-    <hr />
-    <div class="row">
-        <div class="col-xs-1 col-sm-1 co1-md-1 col-lg-1"></div>
-        <div class="col-xs-9 col-sm-9 co1-md-9 col-lg-9">
-            <h2>Аксессуары</h2>
-            <p>
-
-                Отдельного внимания заслуживают аксессуары от Revell.
-            </p>
-            <p>
-                Купить в Киеве и вообще в стране можно на сегодня довольно ограниченный перечень оригинальных аксессуаров. Это связанно единственно с падением платежного спроса, так моделизм вообще на сегодняшний момент хобби затратное.
-            </p>
-            <p>
-                Таким образом, широчайший ассортимент акриловых красок оказался за бортом, в связи с ограниченным сроком годности. То же самое произошло с компрессорами/аэрографами.
-            </p>
-            <h3>Так что же есть?</h3>
-            <p>Хорошо представлены эмалевые краски, клеи и кисти.</p>
-            <p>
-                Эмалевые краски в отличии от акриловых очень долго хранятся, восстанавливаются добавлением растворителя в подсохший пигмент, легко ложатся на неподготовленые поверхности и удобны для работы начинающих моделистов в этом смысле. Эмалевые краски имеют существенные недостатки - сильный запах, длительный период высыхания. Особенно неприятно, что в принципе этот тип красок может быть токсичным и требует работы в хорошо проветриваемых помещениях. В мире происходит стабильный сдвиг в сторону акриловых красок, которые на порядок меньше пахнут, и высыхают буквально в считанные минуты создавая слой полимера. Однако, у нас массовый потребитель пока не готов вбухивать сотни гривен денег в покупки товаров не первой необходимости, так что этот рынок находится в зачаточном состоянии.
-            </p>
-            <p>
-                Revell производит достаточное количество оттенков в RAL-палитре, необходимое для передачи натуральных расцветок техники, а также металлизированные краски, которые приемлемо передают оттенок меди, золота, железа и лаки. Кроме этого можно выбирать тип краски лаковая/матовая для различных типов техники.
-            </p>
-            <h3>Клей</h3>
-            <p>
-                Самый популярный аксессуар и самый ходовой в ассортименте - клей. У Revell отличный клей, локально размягчающий пластик, который позволяет за секунды провести сварку двух поверхностей. Базовый клей применяется для небольших неокрашенных поверхностей.
-            </p>
-            <img style="width:300px" src="revell/glues/contacta1.jpg" />
-            <p>
-                Для больших поверхностей можно применять аналогичный клей с кисточкой либо гель. Первый позволяет сделать быструю обработку склеиваемых поверхностей. Гель удобен медленным засыханием (до 30 мин), что также позволяет более точно и аккуратно произвести соединение крупных фрагментов модели (например, корпуса парусника).
-
-            </p>
-            <img style="width:300px" src="revell/glues/contacta2.jpg" />
-            <img style="width:300px" src="revell/glues/contacta3.jpg" />
-
-            <p>
-                Для специальных поверхностей с хромовыми деталями применяется клей Contacta Liquid Special.
-            </p>
-            <img style="width:300px" src="revell/glues/contacta4.jpg" />
-            <p>
-                Для быстрого склеивания любых поверхностей/материалов подходит Contacta Quick. Правда, как и любой универсал с работой справляется несколько хуже, чем специальные клеи. Contacta Quick - это обычный цианапан/цианакрилат, - тот клей который можно купить в любом супермаркете, и я бы не советовал переплачивать в этом конкретном случае за бренд Revell.
-            </p>
-            <img style="width:300px" src="revell/glues/contacta5.jpg" />
         </div>
     </div>
+
+        <div class="panel panel-default">
+            <div class="panel-footer" style="height:50px"></div>
+        </div>
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
